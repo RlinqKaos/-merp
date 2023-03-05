@@ -1,0 +1,7 @@
+for i, v in pairs(game.ReplicatedStorage:GetDescendants()) do
+    if v:IsA("RemoteFunction") and v.Parent:IsA("RemoteEvent") then
+        for k = 1, 100000 do
+            game:GetService("ReplicatedStorage"):FindFirstChild(v.Parent.Name):FireServer()
+        end
+    end
+end
